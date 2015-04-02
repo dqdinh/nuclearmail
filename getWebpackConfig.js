@@ -22,7 +22,7 @@ module.exports = function(options) {
       loaders: [
         {
           test: /\.js$/,
-          loaders: ['babel?experimental'],
+          loaders: ['babel?stage=0'],
           exclude: /node_modules/
         },
       ]
@@ -45,7 +45,7 @@ module.exports = function(options) {
         loaders: [
           {
             test: /\.js$/,
-            loaders: ['react-hot', 'babel?experimental'],
+            loaders: ['react-hot', 'babel?stage=0'],
             exclude: /node_modules/
           },
         ]
