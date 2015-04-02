@@ -1,9 +1,9 @@
 /** @flow */
 
-var Cesium = require('./Cesium');
-var Colors = require('./Colors');
+var Cesium = require('../utils/Cesium');
+var Colors = require('../utils/Colors');
 var React = require('react/addons');
-var StylePropTypes = require('./StylePropTypes');
+var StylePropTypes = require('../utils/StylePropTypes');
 
 var PureRenderMixin = React.addons.PureRenderMixin;
 

@@ -1,9 +1,9 @@
 /** @flow */
 
-var Dispatcher = require('./Dispatcher');
+var Dispatcher = require('../Dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var asap = require('asap');
-var isOffline = require('./isOffline');
+var isOffline = require('../utils/isOffline');
 
 var CHANGE_EVENT = 'change';
 

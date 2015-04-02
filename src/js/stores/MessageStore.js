@@ -1,12 +1,12 @@
 /** @flow */
 
-var API = require('./API');
-var ActionType = require('./ActionType');
-var BaseStore = require('./BaseStore');
-var MessageAPI = require('./MessageAPI');
+var API = require('../api/API');
+var ActionType = require('../constants/ActionType');
+var BaseStore = require('../stores/BaseStore');
+var MessageAPI = require('../api/MessageAPI');
 var _ = require('lodash');
 
-import type {TMessage} from './Types';
+import type {TMessage} from '../constants/Types';
 type Message = typeof TMessage;
 
 class MessageStore extends BaseStore {

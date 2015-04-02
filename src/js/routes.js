@@ -1,7 +1,7 @@
 /** @flow */
 
-var App = require('./App');
-var ThreadView = require('./ThreadView');
+var App = require('./components/App');
+var ThreadView = require('./components/ThreadView');
 var React = require('react');
 var Router = require('react-router');
 

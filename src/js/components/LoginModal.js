@@ -1,8 +1,8 @@
 /** @flow */
 
-var API = require('./API');
+var API = require('../api/API');
 var Button = require('./Button');
-var Colors = require('./Colors');
+var Colors = require('../utils/Colors');
 var React = require('react/addons');
 
 var PureRenderMixin = React.addons.PureRenderMixin;

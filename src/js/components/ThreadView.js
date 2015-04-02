@@ -1,15 +1,15 @@
 /** @flow */
 
 var Button = require('./Button');
-var KeybindingMixin = require('./KeybindingMixin');
-var MessageStore = require('./MessageStore');
+var KeybindingMixin = require('../mixins/KeybindingMixin');
+var MessageStore = require('../stores/MessageStore');
 var MessageView = require('./MessageView');
-var ThreadActions = require('./ThreadActions');
+var ThreadActions = require('../actions/ThreadActions');
 var React = require('react/addons');
-var DependentStateMixin = require('./DependentStateMixin');
-var ThreadStore = require('./ThreadStore');
-var getUnsubscribeUrl = require('./getUnsubscribeUrl');
-var sx = require('./styleSet');
+var DependentStateMixin = require('../mixins/DependentStateMixin');
+var ThreadStore = require('../stores/ThreadStore');
+var getUnsubscribeUrl = require('../utils/getUnsubscribeUrl');
+var sx = require('../utils/styleSet');
 
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;

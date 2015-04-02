@@ -1,8 +1,8 @@
 /** @flow */
 
-var ActionType = require('./ActionType');
-var Dispatcher = require('./Dispatcher');
-var ThreadAPI = require('./ThreadAPI');
+var ActionType = require('../constants/ActionType');
+var Dispatcher = require('../Dispatcher');
+var ThreadAPI = require('../api/ThreadAPI');
 
 function refresh() {
   Dispatcher.dispatch({type: ActionType.Thread.REFRESH});

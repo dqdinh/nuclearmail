@@ -1,11 +1,11 @@
 /** @flow */
 
-var Colors = require('./Colors');
+var Colors = require('../utils/Colors');
 var HTMLSandbox = require('./HTMLSandbox');
 var React = require('react/addons');
 var RelativeDate = require('./RelativeDate');
 var asap = require('asap');
-var sx = require('./styleSet');
+var sx = require('../utils/styleSet');
 
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;

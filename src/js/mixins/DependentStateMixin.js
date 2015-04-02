@@ -6,7 +6,7 @@ var RSVP = require('rsvp');
 var React = require('react/addons');
 var _ = require('lodash');
 var asap = require('asap');
-var classToMixinFunction = require('./classToMixinFunction');
+var classToMixinFunction = require('../mixins/classToMixinFunction');
 
 class DependentStateMixin {
   _isSafeToSetState: bool;

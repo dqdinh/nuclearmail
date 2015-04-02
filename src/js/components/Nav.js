@@ -1,7 +1,7 @@
 /** @flow */
 
-var Colors = require('./Colors');
-var Cesium = require('./Cesium');
+var Colors = require('../utils/Colors');
+var Cesium = require('../utils/Cesium');
 var React = require('react/addons');
 
 var PropTypes = React.PropTypes;

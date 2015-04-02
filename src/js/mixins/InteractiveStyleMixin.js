@@ -2,7 +2,7 @@
 
 var EventEmitter = require('events').EventEmitter;
 var _ = require('lodash');
-var classToMixinFunction = require('./classToMixinFunction');
+var classToMixinFunction = require('../mixins/classToMixinFunction');
 
 var emitter = new EventEmitter();
 

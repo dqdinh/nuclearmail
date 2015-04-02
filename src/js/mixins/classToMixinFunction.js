@@ -40,7 +40,7 @@
  *   });
  */
 
-var ClientID = require('./ClientID');
+var ClientID = require('../utils/ClientID');
 
 function classToMixinFunction(constructor: any): Function {
   return function() {

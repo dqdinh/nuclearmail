@@ -1,11 +1,11 @@
 /** @flow */
 
-var ActionType = require('./ActionType');
-var BaseStore = require('./BaseStore');
-var ThreadAPI = require('./ThreadAPI');
+var ActionType = require('../constants/ActionType');
+var BaseStore = require('../stores/BaseStore');
+var ThreadAPI = require('../api/ThreadAPI');
 var _ = require('lodash');
 
-import type {TThread} from './Types';
+import type {TThread} from '../constants/Types';
 type Thread = typeof TThread;
 
 type ListResult = {

@@ -1,14 +1,14 @@
 /** @flow */
 /* global gapi */
 
-var ActionType = require('./ActionType');
-var API = require('./API');
-var Dispatcher = require('./Dispatcher');
-var MessageTranslator = require('./MessageTranslator');
+var ActionType = require('../constants/ActionType');
+var API = require('../api/API');
+var Dispatcher = require('../Dispatcher');
+var MessageTranslator = require('../utils/MessageTranslator');
 var RSVP = require('rsvp');
 var _ = require('lodash');
 
-import type {TMessage} from './Types';
+import type {TMessage} from '../constants/Types';
 type Message = typeof TMessage;
 
 function getByIDs(

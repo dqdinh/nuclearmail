@@ -1,7 +1,7 @@
 /** @flow */
 
 var React = require('react/addons');
-var clamp = require('./clamp');
+var clamp = require('../utils/clamp');
 
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;

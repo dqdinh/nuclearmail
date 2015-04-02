@@ -3,7 +3,7 @@
 var _ = require('lodash');
 var utf8 = require('utf8');
 
-import type {TMessage} from './Types';
+import type {TMessage} from '../constants/Types';
 type Message = typeof TMessage;
 
 function translateMessage(rawMessage: Object): Message {

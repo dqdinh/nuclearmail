@@ -1,6 +1,6 @@
 /** @flow */
 
-var ClientID = require('./ClientID');
+var ClientID = require('../utils/ClientID');
 var React = require('react');
 var sanitizer = require('google-caja');
 

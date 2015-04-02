@@ -1,7 +1,7 @@
 /** @flow */
 /* global gapi */
 
-var ClientID = require('./ClientID');
+var ClientID = require('../utils/ClientID');
 var EventEmitter = require('events').EventEmitter;
 var RSVP = require('rsvp');
 

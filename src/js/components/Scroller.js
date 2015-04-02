@@ -11,10 +11,10 @@
 // Inspired by:
 // https://github.com/leoselig/jsFancyScroll/
 
-var Colors = require('./Colors');
-var InfiniteScroll = require('./InfiniteScroll');
+var Colors = require('../utils/Colors');
+var InfiniteScroll = require('../utils/InfiniteScroll');
 var React = require('react/addons');
-var sx = require('./styleSet');
+var sx = require('../utils/styleSet');
 
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;

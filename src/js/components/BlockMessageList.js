@@ -1,12 +1,12 @@
 /** @flow */
 
-var Cesium = require('./Cesium');
-var Colors = require('./Colors');
+var Cesium = require('../utils/Cesium');
+var Colors = require('../utils/Colors');
 var LineClamp = require('./LineClamp');
 var React = require('react/addons');
 var RelativeDate = require('./RelativeDate');
 var _ = require('lodash');
-var sx = require('./styleSet');
+var sx = require('../utils/styleSet');
 
 var PureRenderMixin = React.addons.PureRenderMixin;
 var PropTypes = React.PropTypes;
