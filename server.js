@@ -5,7 +5,9 @@ var config = require('./webpack.config');
 new WebpackDevServer(webpack(config), {
   contentBase: 'build/',
   hot: true,
-  publicPath: config.output.publicPath,
+  color: true,
+  info: false,
+  publicPath: config.output.publicPath
 }).listen(8000, '0.0.0.0', function (err) {
   if (err) {
     console.log(err);
