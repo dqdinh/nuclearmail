@@ -1,35 +1,44 @@
 /** @flow */
 
-var API = require('../api/API');
-var BlockMessageList = require('../components/BlockMessageList');
-var Button = require('../components/Button');
-var Colors = require('../utils/Colors');
-var DependentStateMixin = require('../mixins/DependentStateMixin');
-var InteractiveStyleMixin = require('../mixins/InteractiveStyleMixin');
-var KeybindingMixin = require('../mixins/KeybindingMixin');
-var LabelStore = require('../stores/LabelStore');
-var LoginModal = require('../components/LoginModal');
-var MessageActions = require('../actions/MessageActions');
-var MessageStore = require('../stores/MessageStore');
-var Nav = require('../components/Nav');
 var React = require('react/addons');
 var Router = require('react-router');
-var Scroller = require('../components/Scroller');
-var SearchBox = require('../components/SearchBox');
-var Spinner = require('../components/Spinner');
-var ThreadActions = require('../actions/ThreadActions');
-var ThreadStore = require('../stores/ThreadStore');
 var _ = require('lodash');
 var asap = require('asap');
-var isOffline = require('../utils/isOffline');
-
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;
 var RouteHandler = Router.RouteHandler;
-
 var PAGE_SIZE = 20;
-
 var dummySubscription = {remove() {}};
+
+// API
+var API = require('../api/API');
+
+// Mixins
+var DependentStateMixin = require('../mixins/DependentStateMixin');
+var InteractiveStyleMixin = require('../mixins/InteractiveStyleMixin');
+var KeybindingMixin = require('../mixins/KeybindingMixin');
+
+// Components
+var BlockMessageList = require('../components/BlockMessageList');
+var Button = require('../components/Button');
+var Colors = require('../utils/Colors');
+var LoginModal = require('../components/LoginModal');
+var Nav = require('../components/Nav');
+var Scroller = require('../components/Scroller');
+var SearchBox = require('../components/SearchBox');
+var Spinner = require('../components/Spinner');
+
+// Stores
+var LabelStore = require('../stores/LabelStore');
+var MessageStore = require('../stores/MessageStore');
+var ThreadStore = require('../stores/ThreadStore');
+
+// Actions
+var MessageActions = require('../actions/MessageActions');
+var ThreadActions = require('../actions/ThreadActions');
+
+// Utils
+var isOffline = require('../utils/isOffline');
 
 var App = React.createClass({
   propTypes: {
