@@ -8,6 +8,7 @@ var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;
 var RouteHandler = Router.RouteHandler;
 var PAGE_SIZE = 20;
+
 var dummySubscription = {remove() {}};
 
 // API
@@ -46,8 +47,13 @@ var App = React.createClass({
   },
 
   mixins: [
+    // compares the current props and state with the next ones and
+    // returns false if the equalities pass
+    // https://facebook.github.io/react/docs/pure-render-mixin.html
     PureRenderMixin,
+    // Uses Keyboard.js to listen to specfic keyboard events.
     KeybindingMixin,
+    // ?
     DependentStateMixin({
       labels: {
         method: LabelStore.getLabels,
@@ -70,6 +76,7 @@ var App = React.createClass({
         shouldFetch: options => !!options.ids,
       },
     }),
+    // Style helpers to aid JS manipulation of css
     InteractiveStyleMixin({
       logo: ['matchMedia'],
     }),
