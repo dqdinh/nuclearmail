@@ -6,6 +6,7 @@ var KeybindingMixin: any = {
   bindKey(keyCombo: string, fn: () => void) {
     this._keyBindings = this._keyBindings || [];
     this._keyBindings.push(keyboardjs.on(keyCombo, e => {
+      // no-op when the user is typing in forms
       if (['INPUT', 'TEXTAREA'].indexOf(e.target.tagName) >= 0) {
         return;
       }

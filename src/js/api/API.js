@@ -9,6 +9,7 @@ var emitter = new EventEmitter();
 var isAvailable = false;
 var pendingRequests = [];
 
+// https://github.com/tildeio/rsvp.js/#error-handling
 RSVP.on('error', function(error) {
   console.error(error, error.stack);
 });
@@ -17,7 +18,7 @@ window.handleGoogleClientLoad = function() {
   tryAuthorize(/*immediate*/ true);
 };
 
-function tryAuthorize(immediate) {
+function tryAuthorize(immediate: boolean) {
   var config = {
     /*eslint-disable camelcase*/
     client_id: '108971935462-ied7vg89qivj0bsso4imp6imhvpuso5u.apps.googleusercontent.com',
@@ -34,7 +35,7 @@ function whenAuthenticated(authResult) {
     gapi.client.load('gmail', 'v1', whenLoaded);
   } else {
     emitter.emit('isAuthorized', false);
-  }
+ }
 }
 
 function whenLoaded() {
@@ -60,11 +61,10 @@ var inProgressAPICalls = {};
 /**
  * Wraps a function with API in-progress reporting and error logging.
  */
-function wrap(
-  getPromise: () => Promise
-): Promise {
+function wrap(getPromise: () => Promise): Promise {
   var id = ClientID.get();
   inProgressAPICalls[id] = true;
+  // sets App state 'isLoading' to true
   emitter.emit('start', id);
 
   var promise = promiseGoogleApiAvailable().then(() => {
@@ -75,8 +75,10 @@ function wrap(
 
   return promise.finally(() => {
     delete inProgressAPICalls[id];
-    emitter.emit('stop', id);
+    // Nothing listens for 'stop'
+    // emitter.emit('stop', id);
     if (!Object.keys(inProgressAPICalls).length) {
+    // sets App state 'isLoading' to false
       emitter.emit('allStopped');
     }
   });

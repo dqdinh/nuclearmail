@@ -10,7 +10,7 @@ var Dispatcher = {
     emitter.emit(EVENT, event);
   },
 
-  subscribe(fn: (data: any) => void): {remove: () => void;} {
+  subscribe(fn: (data: any) => void): {remove: () => void} {
     emitter.on(EVENT, fn);
     return {
       remove() {
@@ -21,3 +21,4 @@ var Dispatcher = {
 };
 
 module.exports = Dispatcher;
+

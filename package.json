@@ -33,7 +33,7 @@
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js src/js/; true;",
     "clean": "rimraf build",
-    "watch-flow": "nodemon --watch src/js --exec 'flow'",
+    "watch-flow": "nodemon --watch src/js --exec 'flow; true'",
     "watch-html": "mkdirp build && nodemon --watch src/index.html --exec 'echo `cp src/index.html build/index.html`'",
     "watch-js": "mkdirp build",
     "serve": "node server.js",

@@ -1,9 +1,9 @@
 /** @flow */
 
-var React = require('react/addons');
-var Router = require('react-router');
 var _ = require('lodash');
 var asap = require('asap');
+var React = require('react/addons');
+var Router = require('react-router');
 var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;
 var RouteHandler = Router.RouteHandler;
