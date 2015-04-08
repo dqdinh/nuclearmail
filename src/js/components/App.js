@@ -8,7 +8,6 @@ var PropTypes = React.PropTypes;
 var PureRenderMixin = React.addons.PureRenderMixin;
 var RouteHandler = Router.RouteHandler;
 var PAGE_SIZE = 20;
-
 var dummySubscription = {remove() {}};
 
 // API
@@ -53,7 +52,7 @@ var App = React.createClass({
     PureRenderMixin,
     // Uses Keyboard.js to listen to specfic keyboard events.
     KeybindingMixin,
-    // ?
+    // Each key represents a state
     DependentStateMixin({
       labels: {
         method: LabelStore.getLabels,

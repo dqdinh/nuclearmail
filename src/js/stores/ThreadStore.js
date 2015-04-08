@@ -6,6 +6,7 @@ var ThreadAPI = require('../api/ThreadAPI');
 var _ = require('lodash');
 
 import type {TThread} from '../constants/Types';
+
 type Thread = typeof TThread;
 
 type ListResult = {

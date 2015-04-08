@@ -12,7 +12,7 @@
 // https://github.com/leoselig/jsFancyScroll/
 
 var Colors = require('../utils/Colors');
-var InfiniteScroll = require('../utils/InfiniteScroll');
+var InfiniteScroll = require('../components/InfiniteScroll');
 var React = require('react/addons');
 var sx = require('../utils/styleSet');
 

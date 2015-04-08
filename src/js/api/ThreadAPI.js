@@ -33,7 +33,8 @@ function list(
       maxResults: options.maxResults,
       q: options.query || null,
       pageToken: options.pageToken || null,
-    })).then(listResponse => {
+    }))
+    .then(listResponse => {
       var threadIDs = (listResponse.threads || []).map(m => m.id);
 
       if (!threadIDs.length) {
