@@ -21,7 +21,6 @@ var KeybindingMixin = require('../mixins/KeybindingMixin');
 // Components
 var BlockMessageList = require('../components/BlockMessageList');
 var Button = require('../components/Button');
-var Colors = require('../utils/Colors');
 var LoginModal = require('../components/LoginModal');
 var Nav = require('../components/Nav');
 var Scroller = require('../components/Scroller');
@@ -39,6 +38,7 @@ var ThreadActions = require('../actions/ThreadActions');
 
 // Utils
 var isOffline = require('../utils/isOffline');
+var Colors = require('../utils/Colors');
 
 var App = React.createClass({
   propTypes: {
@@ -85,15 +85,18 @@ var App = React.createClass({
 
   componentDidMount() {
     this._subscriptions = [];
+
     this._subscriptions.push(API.subscribe('start', () => {
       if (!this.state.isLoading) {
         asap(() => this.setState({isLoading: true}));
       }
     }));
+
     this._subscriptions.push(API.subscribe('allStopped', () => {
       // run outside of this context in case the api call was synchronous
       asap(() => this.setState({isLoading: false}));
     }));
+
     this._subscriptions.push(API.subscribe('isAuthorized', isAuthorized => {
       this.setState({isAuthorizing: false, isAuthorized});
     }));

@@ -14,8 +14,10 @@ RSVP.on('error', function(error) {
   console.error(error, error.stack);
 });
 
+// Alternative: call tryAuthorize when App
+// component is mounted.
 window.handleGoogleClientLoad = function() {
-  tryAuthorize(/*immediate*/ true);
+  tryAuthorize(true);
 };
 
 function tryAuthorize(immediate: boolean) {
