@@ -113,6 +113,7 @@ class ThreadStore extends BaseStore {
     return null;
   };
 
+  // list me all synced threads
   list(
     options: {query: string; maxResultCount: number}
   ): Observable<?ListResult> {
@@ -156,6 +157,7 @@ class ThreadStore extends BaseStore {
     if (!this._pagingInfoByQuery[query]) {
       this._pagingInfoByQuery[query] = null;
     } else {
+      // this is never called ...
       this._pagingInfoByQuery[query].isFetching = true;
     }
 

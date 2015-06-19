@@ -1,3 +1,14 @@
+// Takes the observables listed in a component's observe method
+// and subscribe. If data is new, then it will forceUpdate.
+//
+// Q: why does _resubscribe run so many times? Should it now only run once on
+// applicable observables for a view on initial render? and wait
+// for observable changes?
+//
+// A: currently liberally using _resubscribe to recreate new observables
+// (example is query changes from navbar will change query state ->  componentWillUpdate ->
+//  _resubscribe ->  component.observe ->  ThreadStore.list ->  creates new observable from API
+//  call -> triggers onNext -> _resubscribe -> forceUpdate)
 function _resubscribe(component, props) {
   var newObservables = component.observe(props);
   var newSubscriptions = {};
@@ -6,9 +17,11 @@ function _resubscribe(component, props) {
     newSubscriptions[key] = newObservables[key].subscribe(
       function onNext(value) {
         component.data[key] = value;
-
+        // use != to prevent calling forceUpdate when null !== undefined is true
         if (component.data[key] != component._observerLastData[key]) { //eslint-disable-line eqeqeq
           component._observerCalledForceUpdate = true;
+          console.log(2222222222222);
+          // NOTE: from console.logging it appears that forceUpdate is to optimally used
           component.forceUpdate();
         }
 
